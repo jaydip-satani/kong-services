@@ -1,0 +1,20 @@
+services:
+  - name: user-service
+    url: http://user-service:4000
+    routes:
+      - name: user-route
+        hosts:
+          - gateway.jaydipsatani.com
+        paths:
+          - /users
+        strip_path: false
+
+  - name: post-service
+    url: http://post-service:5000
+    routes:
+      - name: post-route
+        hosts:
+          - gateway.jaydipsatani.com
+        paths:
+          - /posts
+        strip_path: false
